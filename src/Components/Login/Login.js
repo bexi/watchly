@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import * as firebase from "firebase";
 import {Link} from "react-router-dom";
 
-import '../app.css';
+import '../../App.css';
 import { AuthContext } from "../../App";
 
 const Login = (props) => {

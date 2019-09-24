@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import { AuthContext } from "../../App";
 
-import '../app.css';
+import '../../App.css';
 
 const Join = () => {
     const [email, setEmail] = useState("");
