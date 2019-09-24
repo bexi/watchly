@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Numans');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 html,body{
     background-image: url('http://getwallpapers.com/wallpaper/full/d/a/0/1254394-amazing-oblivion-movie-wallpaper-2880x1800-for-samsung.jpg');
@@ -11,12 +11,13 @@ html,body{
 span{
     color:white;
 }
-.container{
+
+.container-sigin{
     height: 100%;
     align-content: center;
 }
 
-.card{
+.card-sigin{
     height: 370px;
     margin-top: auto;
     margin-bottom: auto;
@@ -29,7 +30,7 @@ span{
 }
 
 .form_btn{
-    background-color: white !important;
+    background-color: white ;
     opacity: .7;
     width: 100px;
 }

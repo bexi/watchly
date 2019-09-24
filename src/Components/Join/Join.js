@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import { AuthContext } from "../../App";
 
-import './Join.css';
+import '../app.css';
 
 const Join = () => {
     const [email, setEmail] = useState("");
@@ -43,9 +43,9 @@ const Join = () => {
         );
     }
     return (
-        <div className="container">
+        <div className="container-sigin">
             <div className="d-flex justify-content-center h-100">
-                <div className="card">
+                <div className="card-sigin">
                     <Header/>
                     <form onSubmit={e => handleForm(e)}>
                         <div className="input-group form-group">

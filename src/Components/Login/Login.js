@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import * as firebase from "firebase";
 import {Link} from "react-router-dom";
 
-import '../Join/Join.css'; // TODO
+import '../app.css';
 import { AuthContext } from "../../App";
 
 const Login = (props) => {
@@ -46,9 +46,9 @@ const Login = (props) => {
     }
 
     return (
-        <div className="container">
+        <div className="container-sigin">
             <div className="d-flex justify-content-center h-100">
-                <div className="card">
+                <div className="card-sigin">
                     <Header/>
                     <form onSubmit={e => handleForm(e)}>
                         <div className="input-group form-group">
