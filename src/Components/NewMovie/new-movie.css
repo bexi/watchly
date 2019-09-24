@@ -4,9 +4,36 @@
 }
 
 .card-new-movie{
-    height: 370px;
+    height: 300px;
     margin-top: auto;
     margin-bottom: auto;
-    width: 400px;
+    width: 500px;
     background-color: rgba(0,0,0,0.5) !important;
+}
+
+form {
+    text-align: center;
+}
+
+form input {
+    text-align: center;
+    background: rgba(244,244,244,0.10);
+    border-radius: 5%;
+    width: 80%;
+    margin: 2%;
+}
+
+form input, select, textarea{
+    color: white;
+}
+form input::placeholder{
+    color: white;
+}
+.new-movie-btn{
+    margin: 5%;
+    width: 50%;
+    background-color: rgba(0,0,0,0.7) !important;
+    color: #fefffb !important;
+    font-family : inherit;
+    font-size: 1.2em;
 }

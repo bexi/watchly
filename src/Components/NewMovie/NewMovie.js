@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import {AppContext} from "../../App";
 
 import './new-movie.css';
-
+import '../../App.css';
 
 const NewMovie = (props) => {
     const App = useContext(AppContext);
@@ -22,27 +22,30 @@ const NewMovie = (props) => {
     return (
         <div className="container-new-movie">
             <div className="d-flex justify-content-center h-100">
-            <form onSubmit={e => handleForm(e)} className="card-new-movie">
-                <div className="">
-                    <input
-                        value={title}
-                        onChange={e => setTitle(e.target.value)}
-                        name="title"
-                        type="text"
-                        placeholder="movie title"
-                    />
-                    <input
-                        onChange={e => setRating(e.target.value)}
-                        name="rating"
-                        value={rating}
-                        type="text"
-                        placeholder="your movie rating"
-                    />
+                <div className="card-new-movie">
+                    <div className="card-header"><h3 className="text-center">Add a New Movie</h3></div>
+                    <form onSubmit={e => handleForm(e)}>
+                        <div className="new-movie-input">
+                            <input
+                                value={title}
+                                onChange={e => setTitle(e.target.value)}
+                                name="title"
+                                type="text"
+                                placeholder="movie title"
+                            />
+                            <input
+                                onChange={e => setRating(e.target.value)}
+                                name="rating"
+                                value={rating}
+                                type="text"
+                                placeholder="your movie rating"
+                            />
+                        </div>
+                        <div className="">
+                            <button type="submit" className="btn new-movie-btn">Add Me!</button>
+                        </div>
+                    </form>
                 </div>
-                <div className="">
-                    <button type="submit" className="btn form_btn">Add</button>
-                </div>
-            </form>
             </div>
         </div>
     );
