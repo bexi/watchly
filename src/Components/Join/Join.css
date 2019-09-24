@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+    background-image: url('http://getwallpapers.com/wallpaper/full/d/a/0/1254394-amazing-oblivion-movie-wallpaper-2880x1800-for-samsung.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+
+span{
+    color:white;
+}
+.container{
+    height: 100%;
+    align-content: center;
+}
+
+.card{
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+
+.card-header h3{
+    color: white;
+}
+
+.form_btn{
+    background-color: white ;
+    opacity: .7;
+    width: 100px;
+}
+
+.links{
+    color: white;
+}
+
+.links a{
+    margin-left: 4px;
+}
