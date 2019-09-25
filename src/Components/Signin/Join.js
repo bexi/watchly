@@ -1,27 +1,25 @@
 import React, { useState, useContext } from "react";
 import * as firebase from "firebase";
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom'
 
-import '../../App.css';
 import { AuthContext } from "../../App";
 
-const Login = (props) => {
-    const Auth = useContext(AuthContext);
+import './sign-in.css';
 
+const Join = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setErrors] = useState("");
+
+    const Auth = useContext(AuthContext);
 
     const handleForm = e => {
         e.preventDefault();
         firebase
             .auth()
-            .signInWithEmailAndPassword(email, password)
+            .createUserWithEmailAndPassword(email, password)
             .then(res => {
-                if (res.user){
-                    Auth.setLoggedIn(true);
-                    props.history.push('/mainpage');
-                }
+                if (res.user) Auth.setLoggedIn(true);
             })
             .catch(e => {
                 setErrors(e.message);
@@ -31,27 +29,27 @@ const Login = (props) => {
     const Header = () => {
         return(
             <div className="card-header">
-                <h3>Login To Watchly</h3>
+                <h3>Join Watchly</h3>
             </div>);
     }
 
     const Footer = () => {
+        // d-flex justify-content-center links
         return (
-            <div className="card-footer">
-                <div className="d-flex justify-content-center links">Already have an account?
-                    <Link to="/Login">Login</Link>
-                </div>
-            </div>
+          <div className="card-footer">
+              <div className="d-flex justify-content-center links">Already have an account?
+                  <Link to="/Login">Login</Link>
+              </div>
+          </div>
         );
     }
-
     return (
         <div className="container-sigin">
             <div className="d-flex justify-content-center h-100">
                 <div className="card-sigin">
                     <Header/>
                     <form onSubmit={e => handleForm(e)}>
-                        <div className="input-group form-group">
+                        <div className="input-group form-group signin-input">
                             <input
                                 className="form-control"
                                 value={email}
@@ -69,9 +67,7 @@ const Login = (props) => {
                                 placeholder="password"
                             />
                         </div>
-                        <div className="form-group">
-                            <button type="submit" className="btn float-right form_btn">Login</button>
-                        </div>
+                        <div className="center-wrapper"><button type="submit" className="btn signin-btn">Join</button></div>
                         <span>{error}</span>
                     </form>
                     <Footer/>
@@ -81,4 +77,4 @@ const Login = (props) => {
     );
 };
 
-export default Login;
+export default Join;

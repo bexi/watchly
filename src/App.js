@@ -6,8 +6,8 @@ import './App.css';
 import * as firebase from "firebase";
 import firebaseConfig from "./firebaseConfig";
 
-import Login from "./Components/Login/Login";
-import Join from "./Components/Join/Join";
+import Login from "./Components/Signin/Login";
+import Join from "./Components/Signin/Join";
 import MainPage from "./Components/MainPage/MainPage";
 import NewMovie from "./Components/NewMovie/NewMovie";
 

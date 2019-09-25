@@ -12,34 +12,15 @@ span{
     color:white;
 }
 
-.container-sigin{
-    height: 100%;
-    align-content: center;
-}
-
-.card-sigin{
-    height: 370px;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 400px;
-    background-color: rgba(0,0,0,0.5) !important;
-}
-
 .card-header h3{
     color: white;
 }
 
-.form_btn{
-    background-color: white ;
-    opacity: .7;
-    width: 100px;
+.card-footer {
+    display: block;
 }
 
-.links{
-    color: white;
+.center-wrapper {
+    display: flex;
+    justify-content: center;
 }
-
-.links a{
-    margin-left: 4px;
-}
-
