@@ -6,7 +6,7 @@ import { AuthContext } from "../../App";
 
 import './sign-in.css';
 
-const Join = () => {
+const Join = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setErrors] = useState("");
@@ -19,7 +19,10 @@ const Join = () => {
             .auth()
             .createUserWithEmailAndPassword(email, password)
             .then(res => {
-                if (res.user) Auth.setLoggedIn(true);
+                if (res.user){
+                    Auth.setLoggedIn(true);
+                    props.history.push('/mainpage');
+                }
             })
             .catch(e => {
                 setErrors(e.message);

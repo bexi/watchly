@@ -18,7 +18,7 @@ export const AppContext = React.createContext(null);
 
 function App(props) {
     // Authentication
-    const devLogin = true;
+    const devLogin = false;
     const [isLoggedIn, setLoggedIn] = useState(devLogin);
 
     // Movies
@@ -37,14 +37,15 @@ function App(props) {
         Is logged in? {JSON.stringify(isLoggedIn)}
         <AppContext.Provider value={{ movies, setMovies}}>
             <div className="App">
-              <Router>
-                  <Header />
+                <Header/>
+
+                <Router>
                   <Route exact path="/" component={Login} />
                   <Route exact path="/login" component={(props) => <Login {...props} />} />
                   <Route path="/join" component={Join} />
                   <PrivateRoute path="/mainpage" component={MainPage} />
                   <PrivateRoute path="/newmovie" component={NewMovie} />
-              </Router>
+                </Router>
             </div>
         </AppContext.Provider>
       </AuthContext.Provider>
