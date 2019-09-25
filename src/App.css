@@ -11,6 +11,10 @@ html,body{
 span{
     color:white;
 }
+.container {
+    height: 100%;
+    align-content: center;
+}
 
 .card-header h3{
     color: white;

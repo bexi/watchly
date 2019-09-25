@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 
-import './MainPage.css';
+import './main-page.css';
 import MovieCard from "../MovieCard/MovieCard";
 import {AppContext} from "../../App";
 
@@ -42,16 +42,20 @@ const MainPage = (props) => {
         }, 0);
     }*/
     return (
-        <div>
-            <button className={'add-movie-btn'} onClick={(e) => props.history.push({
-                pathname: '/newmovie',
-            })}>Add new Movie</button>
-            <div className="movie-list">
-                <ul>
-                    {App.movies.map((movie, i) => (
-                        <MovieCard title={movie.title} rating={movie.rating}/>))
-                    }
-                </ul>
+        <div className="container">
+            <div className="main-page">
+                <h1>These are your movies:</h1>
+                <div className="center-wrapper">
+                <button className={'btn add-new-movie-btn'} onClick={(e) => props.history.push({
+                    pathname: '/newmovie',
+                })}>Add new Movie</button></div>
+                <div className="movie-list">
+                    <ul>
+                        {App.movies.map((movie, i) => (
+                            <MovieCard title={movie.title} rating={movie.rating}/>))
+                        }
+                    </ul>
+                </div>
             </div>
         </div>
     );
