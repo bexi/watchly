@@ -1,7 +1,6 @@
-.card-movie{
-    height: 370px;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 400px;
-    background-color: rgba(0,0,0,0.5) !important;
+.movie-card{
+    width: 100%;
+    margin: 3%;
+    background-color: rgba(255,255,255, 0.2) !important;
+    border-radius: 5px;
 }
