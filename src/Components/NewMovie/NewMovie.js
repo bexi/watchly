@@ -45,7 +45,7 @@ const NewMovie = (props) => {
                             <button type="submit" className="btn new-movie-btn">Add Me!</button>
                         </div>
                     </form>
-                    <button className="btn cancel-btn" onClick={()=> props.history.push('/mainpage')}>
+                    <button className="btn cancel-btn" onClick={()=> props.callback(false)}>
                         Cancel
                     </button>
                 </div>
