@@ -16,8 +16,8 @@ const NewMovie = (props) => {
         e.preventDefault();
         const newMovies = [...App.movies, {title: title, rating: rating}];
         App.setMovies(newMovies);
-        console.log("MOVIES")
-        props.history.push('/mainpage');
+        //console.log("MOVIES")
+        //props.history.push('/mainpage');
     };
     return (
         <div className="container-new-movie">

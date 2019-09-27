@@ -18,7 +18,7 @@ export const AppContext = React.createContext(null);
 
 function App(props) {
     // Authentication
-    const devLogin = false;
+    const devLogin = true;
     const [isLoggedIn, setLoggedIn] = useState(devLogin);
 
     // Movies
@@ -32,16 +32,16 @@ function App(props) {
         )} />
     )
 
-    let logoutbutton;
-    if(isLoggedIn) logoutbutton = <Header/>
-    else logoutbutton = null;
+    let logOutButton;
+    if(isLoggedIn) logOutButton = <Header/>
+    else logOutButton = null;
 
   return (
       <AuthContext.Provider value={{ isLoggedIn, setLoggedIn }}>
         Is logged in? {JSON.stringify(isLoggedIn)}
         <AppContext.Provider value={{ movies, setMovies}}>
             <div className="App">
-                {logoutbutton}
+                {logOutButton}
                 <Router>
                   <Route exact path="/" component={Login} />
                   <Route exact path="/login" component={(props) => <Login {...props} />} />
