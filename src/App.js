@@ -32,13 +32,16 @@ function App(props) {
         )} />
     )
 
+    let logoutbutton;
+    if(isLoggedIn) logoutbutton = <Header/>
+    else logoutbutton = null;
+
   return (
       <AuthContext.Provider value={{ isLoggedIn, setLoggedIn }}>
         Is logged in? {JSON.stringify(isLoggedIn)}
         <AppContext.Provider value={{ movies, setMovies}}>
             <div className="App">
-                <Header/>
-
+                {logoutbutton}
                 <Router>
                   <Route exact path="/" component={Login} />
                   <Route exact path="/login" component={(props) => <Login {...props} />} />
