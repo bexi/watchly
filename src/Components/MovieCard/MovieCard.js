@@ -1,5 +1,8 @@
 import React, { useState, useContext } from "react";
 import {AppContext} from "../../App";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import Rating from 'react-rating';
 
 import './movie-card.css';
 import star_empty from '../../icons/star_empty.svg'
@@ -10,22 +13,34 @@ const MovieCard = (props) => {
     const App = useContext(AppContext);
 
     const [title, setTitle] = useState(props.title);
-    const [rating, setRating] = useState(props.rating);
-    //const [watchDate, setWatchDate] = useState(""); // implement later
-    //const [movieImage, setMovieImage] = useState(""); // implement later
+    const [viewDate, setViewDate] = useState(new Date());
+    const [rating, setRating] = useState(0);
+
+    console.log('rating: ' + rating);
 
     return (
         <div className="container">
             <div className='movie-card'>
-            <div className="row">
-                <div className='col float-left'>
-                    <div>Title: {title}</div>
-                    <div>Rating: {rating}</div>
-                    <div>Watch date: TODO </div>
+                <div className="row">
+                    <div className='col float-left'>
+                        <div>Title: {title}</div>
+                        <div>Rating: {rating}</div>
+                        <div>Watch date: TODO </div>
+                    </div>
+                    <div className='col float-left'>
+                        <img src={exampleMoviePicture} />
+                    </div>
+                    <DatePicker
+                        selected={viewDate}
+                        onChange={(date) => {setViewDate(date)}}
+                    />
+                    <Rating
+                        emptySymbol={<img src={star_empty} className="star-icon" />}
+                        fullSymbol={<img src={star_filled} className="star-icon" />}
+                        onChange={(value) => setRating(value)}
+                    />
                 </div>
-                <div className='col float-left'>
-                    <img src={exampleMoviePicture} /></div>
-            </div></div>
+            </div>
         </div>
     );
 };
