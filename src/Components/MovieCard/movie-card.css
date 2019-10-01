@@ -4,14 +4,6 @@
     background-color: rgba(255,255,255, 0.2) !important;
     border-radius: 5px;
     margin-top: 2%;
-    /*
-    width: 100%;
-    max-width: 1400px;
-    min-width: 600px;
-    margin: 0 auto;
-    margin-top: 1rem;
-    font-size: 0;
-    margin-bottom: 3rem;*/
 }
 
 .movie-card img {
@@ -21,10 +13,6 @@
     float: right;
     border-radius: 50%;
     padding: 1%;
-}
-
-.delete-movie-btn{
-
 }
 
 .star-icon{

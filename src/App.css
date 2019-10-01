@@ -7,24 +7,3 @@ html,body{
     height: 100%;
     font-family: 'Numans', sans-serif;
 }
-
-span{
-    color:white;
-}
-.container {
-    height: 100%;
-    align-content: center;
-}
-
-.card-header h3{
-    color: white;
-}
-
-.card-footer {
-    display: block;
-}
-
-.center-wrapper {
-    display: flex;
-    justify-content: center;
-}

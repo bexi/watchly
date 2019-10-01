@@ -1,10 +1,15 @@
 import React, { useState, useContext } from "react";
-
 import './main-page.css';
+
+// material ui
+import AddIcon from '@material-ui/icons/Add';
+import Fab from '@material-ui/core/Fab';
+
+// internal components
 import MovieCard from "../MovieCard/MovieCard";
 import {AppContext} from "../../App";
-import Header from "../../Header";
-import NewMovie from "../NewMovie/NewMovie";
+import AddNewMovie from "../AddNewMovie/AddNewMovie";
+import {Container} from "@material-ui/core";
 
 const MainPage = (props) => {
     const App = useContext(AppContext);
@@ -13,29 +18,28 @@ const MainPage = (props) => {
     let newMovieComponent;
     let newMovieButton;
     if(showNewMovieComponent){
-        newMovieComponent = <NewMovie callback={setShowNewMovieComponent}/>
+        newMovieComponent = <AddNewMovie callback={setShowNewMovieComponent}/>
         newMovieButton = null;
     }else{
-        newMovieButton = <button className={'btn add-new-movie-btn'} onClick={() => setShowNewMovieComponent(true)}>Add new Movie</button>
+        newMovieButton =
+            (<Fab color="primary" aria-label="add" onClick={() => setShowNewMovieComponent(true)} >
+                <AddIcon />
+            </Fab>);
         newMovieComponent = null;
     }
     return (
-        <div className="container">
-            <div className="main-page">
+        <Container>
+            <div className="movie-list">
                 <h1>These are your movies:</h1>
-                <div className="center-wrapper">
-                    {newMovieButton}
-                    {newMovieComponent}
-                </div>
-                <div className="movie-list">
+                {newMovieButton}
+                {newMovieComponent}
                     <ul>
                         {App.movies.map((movie, i) => (
                             <MovieCard title={movie.title} rating={movie.rating}/>))
                         }
                     </ul>
-                </div>
             </div>
-        </div>
+        </Container>
     );
 };
 

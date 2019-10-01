@@ -1,14 +1,20 @@
 import React, { useState, useContext } from "react";
-import {AppContext} from "../../App";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Rating from 'react-rating';
 
+// Internal components
 import './movie-card.css';
+import {AppContext} from "../../App";
+
+// Icons
 import star_empty from '../../icons/star_empty.svg'
-import star_filled from '../../icons/star.svg' // <img src={star_filled} />
+import star_filled from '../../icons/star.svg'
 import exampleMoviePicture from '../../icons/example_movie_picture.jpg'
 
+import Grid from '@material-ui/core/Grid';
+
+// TODO -- update fully to material design
 const MovieCard = (props) => {
     const App = useContext(AppContext);
 
@@ -16,20 +22,11 @@ const MovieCard = (props) => {
     const [viewDate, setViewDate] = useState(new Date());
     const [rating, setRating] = useState(0);
 
-    console.log('rating: ' + rating);
-
     return (
-        <div className="container">
-            <div className='movie-card'>
-                <div className="row">
-                    <div className='col float-left'>
-                        <div>Title: {title}</div>
-                        <div>Rating: {rating}</div>
-                        <div>Watch date: TODO </div>
-                    </div>
-                    <div className='col float-left'>
-                        <img src={exampleMoviePicture} />
-                    </div>
+        <div className="movie-card">
+            <Grid container spacing={1}>
+                <Grid item xs={6}>
+                    <div>Title: {title}</div>
                     <DatePicker
                         selected={viewDate}
                         onChange={(date) => {setViewDate(date)}}
@@ -39,11 +36,13 @@ const MovieCard = (props) => {
                         fullSymbol={<img src={star_filled} className="star-icon" />}
                         onChange={(value) => setRating(value)}
                     />
-                </div>
-            </div>
+                </Grid>
+                <Grid item xs={6}>
+                    <img src={exampleMoviePicture} />
+                </Grid>
+            </Grid>
         </div>
     );
 };
 
 export default MovieCard;
-//  <img className="movie-image" src={exampleMoviePicture} />
