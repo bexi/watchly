@@ -15,6 +15,7 @@ import './App.css';
 import Signin from "./Components/Signin/Signin";
 import MainPage from "./Components/MainPage/MainPage";
 import Header from "./Header";
+import responsiveFontSizes from "@material-ui/core/styles/responsiveFontSizes";
 
 // Init firebase with config
 firebase.initializeApp(firebaseConfig);
@@ -25,7 +26,7 @@ export const AppContext = React.createContext(null);
 
 function App(props) {
     // App theme -- TODO move to separate file
-    const theme = createMuiTheme({
+    const base_theme = createMuiTheme({
         palette: {
             type: 'dark', // the text and similar will be white
             primary: {
@@ -42,6 +43,7 @@ function App(props) {
             }
         }
     });
+    const theme = responsiveFontSizes(base_theme);
 
     // Authentication
     const devLogin = true;
