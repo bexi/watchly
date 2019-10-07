@@ -8,10 +8,10 @@ import firebaseConfig from "./firebaseConfig";
 // Material UIs
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme } from '@material-ui/core/styles';
-import {ThemeProvider} from '@material-ui/styles';
+import { ThemeProvider } from '@material-ui/styles';
 
 // Internal components
-import './App.css';
+import './App.scss';
 import Signin from "./Components/Signin/Signin";
 import MainPage from "./Components/MainPage/MainPage";
 import Header from "./Header";
@@ -37,6 +37,9 @@ function App(props) {
             },
             secondary: {
                 main: '#0044ff'
+            },
+            primaryOpacity: {
+                main: 'rgba(#ff4400, 0.2)'
             },
             background: {
                 paper: 'rgba(0,0,0,0.5)'
