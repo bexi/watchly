@@ -39,6 +39,7 @@ const MovieCard = (props) => {
                 </Grid>
                 <Grid item xs={6}>
                     <img src={exampleMoviePicture} />
+                    🍔🍔🍔
                 </Grid>
             </Grid>
         </div>

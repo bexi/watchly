@@ -5,10 +5,10 @@ import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import * as firebase from "firebase";
 import firebaseConfig from "./firebaseConfig";
 
-// Material UI
+// Material UIs
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
+import {ThemeProvider} from '@material-ui/styles';
 
 // Internal components
 import './App.css';
@@ -30,17 +30,17 @@ function App(props) {
             type: 'dark', // the text and similar will be white
             primary: {
                 // light: will be calculated from palette.primary.main,
-                main: '#0044ff',
+                main: '#ff4400'
                 // dark: will be calculated from palette.primary.main,
                 // contrastText: will be calculated to contrast with palette.primary.main
             },
             secondary: {
-                main: '#ff4400'
+                main: '#0044ff'
             },
-            background : {
+            background: {
                 paper: 'rgba(0,0,0,0.5)'
             }
-        },
+        }
     });
 
     // Authentication
