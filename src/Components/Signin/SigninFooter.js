@@ -4,7 +4,7 @@ import React from "react";
 import {useTheme} from "@material-ui/styles";
 
 // Internal components
-import StyledLink from '../StyledLink'
+import {StyledLink} from '../StyledComponents'
 
 const SigninFooter = (showLogin, setShowLogin) => {
     const MuiTheme = useTheme();

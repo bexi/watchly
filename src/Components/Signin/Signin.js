@@ -16,8 +16,7 @@ import {Container} from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import PasswordField from './PasswordField'
 import SiginFooter from "./SigninFooter";
-import StyledLink from '../StyledLink'
-import styled from "styled-components";
+
 /**
  * Component for both loggin in and joining the application
  * @param props

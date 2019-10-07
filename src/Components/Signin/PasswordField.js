@@ -1,8 +1,9 @@
-import TextField from "@material-ui/core/TextField";
 import React from "react";
 
+import TextField from "@material-ui/core/TextField";
+
 const PasswordField = (showLogin, password1, setPassword1, password2, setPassword2) => {
-    if(showLogin){
+    if(showLogin){ // login
         return(
             <TextField
                 style={ {width: '100%', marginBottom: 8}}
