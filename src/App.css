@@ -1,9 +1,33 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+/* Variables */
+/* Reset CSS */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; }
+
+/* rem is not supported by <IE9 */
+/* standard browser settings --> 10 px */
+html {
+    font-size: 62.5%; }
+@media only screen and (max-width: 75em) {
+    html {
+        font-size: 56.25%; } }
+@media only screen and (max-width: 56.25em) {
+    html {
+        font-size: 50%; } }
+@media only screen and (min-width: 112.5em) {
+    html {
+        font-size: 75%; } }
+
 html,body{
     background-image: url('http://getwallpapers.com/wallpaper/full/d/a/0/1254394-amazing-oblivion-movie-wallpaper-2880x1800-for-samsung.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
     font-family: 'Numans', sans-serif;
+    font-size: 1.2rem;
 }
