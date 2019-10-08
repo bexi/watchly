@@ -12,12 +12,14 @@ import {Box} from "@material-ui/core";
 import {KeyboardDatePicker} from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-import Checkbox from '@material-ui/core/Checkbox';
 import Slider from '@material-ui/core/Slider';
 import Button from "@material-ui/core/Button";
 //import {useTheme} from "@material-ui/styles";
 import Divider from '@material-ui/core/Divider';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
+import Checkbox from '@material-ui/core/Checkbox';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
 
 // TODO -- update fully to material design
 const MovieCard = (props) => {
@@ -93,6 +95,40 @@ const MovieCard = (props) => {
     return (
         <div className="movie-card">
             <Grid container spacing={1}>
+                <Grid item xs={2} >
+                    <Checkbox
+                        checked={viewed}
+                        onChange={(e) => setViewed(e.target.checked)}
+                        value="viewed"
+                        inputProps={{
+                            'aria-label': 'primary checkbox'
+                        }}
+                        color={"primary"}
+                        style={{top: '25%'}}
+                        icon={<CheckBoxOutlineBlankIcon fontSize="large" />}
+                        checkedIcon={<CheckBoxIcon fontSize="large" />}
+                    />
+                </Grid>
+
+                <Grid item xs={6}>
+                    <p > {title} </p>
+                    <p > imbd rating </p>
+
+                </Grid>
+
+                <Grid item xs={4}>
+                        <img src={exampleMoviePicture} />
+                </Grid>
+            </Grid>
+        </div>
+    );
+};
+
+export default MovieCard;
+
+/*
+*   <div className="movie-card">
+            <Grid container spacing={1}>
                 <Grid item xs={8}>
                     <Box style={{marginLeft: '3%'}}>
                         <Grid container>
@@ -129,11 +165,9 @@ const MovieCard = (props) => {
                         width: '100%',
                         bottom: '0',
                        }}
-                    onClick={(e) => console.log("todo: save to db")/**Todo: Database!*/}
-            >Save
-            </Button>
-        </div>
-    );
-};
-
-export default MovieCard;
+                    onClick={(e) => console.log("save to db")}
+>Save
+</Button>
+</div>
+*
+* */
