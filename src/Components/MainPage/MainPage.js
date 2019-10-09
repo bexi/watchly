@@ -9,7 +9,7 @@ import Fab from '@material-ui/core/Fab';
 import MovieCard from "../MovieCard/MovieCard";
 import {AppContext} from "../../App";
 import AddNewMovie from "../AddNewMovie/AddNewMovie";
-import {Container} from "@material-ui/core";
+import {Box, Container} from "@material-ui/core";
 
 const MainPage = (props) => {
     const App = useContext(AppContext);
@@ -28,11 +28,11 @@ const MainPage = (props) => {
         newMovieComponent = null;
     }
     return (
-        <Container>
+        <Container style={{width:'100%',height:'100%'}}>
+            <h1>These are your movies:</h1>
+            {newMovieButton}
+            {newMovieComponent}
             <div className="movie-list">
-                <h1>These are your movies:</h1>
-                {newMovieButton}
-                {newMovieComponent}
                     <ul>
                         {App.movies.map((movie, i) => (
                             <MovieCard title={movie.title} rating={movie.rating}/>))

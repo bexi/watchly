@@ -24,10 +24,16 @@ html {
         font-size: 75%; } }
 
 html,body{
+    background-color: black;
     background-image: url('http://getwallpapers.com/wallpaper/full/d/a/0/1254394-amazing-oblivion-movie-wallpaper-2880x1800-for-samsung.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
     font-family: 'Numans', sans-serif;
     font-size: 1.2rem;
+}
+.App {
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
