@@ -29,9 +29,11 @@ const MainPage = (props) => {
     }
     return (
         <Container style={{width:'100%',height:'100%'}}>
-            <h1>These are your movies:</h1>
-            {newMovieButton}
-            {newMovieComponent}
+            <div style={{textAlign:'center', color:'white'}}>
+                <h1>These are your movies:</h1>
+                {newMovieButton}
+                {newMovieComponent}
+            </div>
             <div className="movie-list">
                     <ul>
                         {App.movies.map((movie, i) => (
