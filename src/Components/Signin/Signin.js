@@ -113,5 +113,5 @@ const Signin = (props) => {
         </Container>
     );
 };
-// {SiginFooter(showLogin, setShowLogin)}
+
 export default Signin;
