@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 // Material UI
 import Button from "@material-ui/core/Button";
@@ -8,29 +9,40 @@ import Button from "@material-ui/core/Button";
 import {AuthContext} from "./App";
 import {Typography} from "@material-ui/core";
 import {useTheme} from "@material-ui/styles";
+import {PaperDiv} from "./Components/StyledComponents";
+
+const LogoutButton = styled(Button)`
+    position:absolute !important;
+    right: 5%;
+`;
+const HeaderContainer = styled(PaperDiv)`
+    height: 8%;
+    padding: 1%;
+`;
 
 const Header = () => {
     const Auth = useContext(AuthContext);
     const MuiTheme = useTheme();
 
-    const subTitle="  Keep Track of Your Movies";
+    const title = "Watchly";
+    const subTitle=" Keep Track of Your Movies";
 
     // Only show the logout button if the user is logged in
     let logOutButton;
-    if(Auth.isLoggedIn) logOutButton = (<Button style={{position:"absolute", right:'5%'}} onClick={() =>
-    { Auth.setLoggedIn(false)}}>Log out</Button>);
+    if(Auth.isLoggedIn) logOutButton = (<LogoutButton onClick={() =>
+    { Auth.setLoggedIn(false)}}>Log out</LogoutButton>);
     else logOutButton = null;
 
     return (
-        <div style={{width:'100%',height:'8%', padding:'1%', backgroundColor: MuiTheme.palette.background.paper}}>
+        <HeaderContainer theme={MuiTheme}>
             <Typography variant="h4" component="h4" style={{display:'inline',color:'white'}}>
-               Watchly
+                {title}
             </Typography>
             <Typography variant="h6" component="h1" style={{display:'inline',color:'white'}}>
                 {subTitle}
             </Typography>
             {logOutButton}
-        </div>);
+        </HeaderContainer>);
 }
 
 export default Header;
