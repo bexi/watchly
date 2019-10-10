@@ -89,7 +89,7 @@ const Signin = (props) => {
 
     return (
         <Container>
-            <Card style={{width: '50%', margin:'0 auto'}}>
+            <Card style={{width: '50%', margin:'2% auto'}}>
                 <CardContent style={{textAlign: 'center'}}>
                     <Typography variant="h4" gutterBottom>{headerText()}</Typography>
                     <form onSubmit={handleForm}>

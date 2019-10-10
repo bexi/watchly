@@ -64,18 +64,13 @@ function App(props) {
         )} />
     )
 
-    // Only show the logout button if the user is logged in -- TODO move to a Header Component
-    let logOutButton;
-    if(isLoggedIn) logOutButton = <Header/>
-    else logOutButton = null;
-
     return (
          <AuthContext.Provider value={{ isLoggedIn, setLoggedIn }}>
             <AppContext.Provider value={{ movies, setMovies}}>
                 <div className="App">
                     <CssBaseline>
                         <ThemeProvider theme={theme}>
-                        {logOutButton}
+                        <Header/>
                         <Router>
                           <Route exact path="/" component={(props) => <Signin {...props} />} />
                           <Route exact path="/signin" component={(props) => <Signin {...props} />} />

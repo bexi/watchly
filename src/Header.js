@@ -14,6 +14,13 @@ const Header = () => {
     const MuiTheme = useTheme();
 
     const subTitle="  Keep Track of Your Movies";
+
+    // Only show the logout button if the user is logged in
+    let logOutButton;
+    if(Auth.isLoggedIn) logOutButton = (<Button style={{position:"absolute", right:'5%'}} onClick={() =>
+    { Auth.setLoggedIn(false)}}>Log out</Button>);
+    else logOutButton = null;
+
     return (
         <div style={{width:'100%',height:'8%', padding:'1%', backgroundColor: MuiTheme.palette.background.paper}}>
             <Typography variant="h4" component="h4" style={{display:'inline',color:'white'}}>
@@ -22,8 +29,7 @@ const Header = () => {
             <Typography variant="h6" component="h1" style={{display:'inline',color:'white'}}>
                 {subTitle}
             </Typography>
-            <Button style={{position:"absolute", right:'5%'}} onClick={() =>
-            { Auth.setLoggedIn(false)}}>Log out</Button>
+            {logOutButton}
         </div>);
 }
 
