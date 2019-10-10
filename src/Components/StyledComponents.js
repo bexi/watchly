@@ -13,7 +13,14 @@ const StyledLink = (styled(Link)`
 const PaperDiv = styled.div`
         width: 100%;
         height: 100%;
-        background-color: ${(props) => props.theme.palette.background.paper};
+        margin: 0 auto;
+        background-color: ${(props) => (props.paperLight) ? props.theme.palette.background.paperLight: props.theme.palette.background.paper};
+`;
+
+const ScrollableDiv = styled.div`
+    overflow: hidden;
+    overflow-y: scroll; 
+    position: relative; 
 `;
 
 const StyledInput = (styled(TextField)`
@@ -21,4 +28,9 @@ const StyledInput = (styled(TextField)`
         margin-bottom: 2% !important;
 `);
 
-export {StyledLink, PaperDiv, StyledInput};
+const CenterTextContainer = styled.div`
+        color: white;
+        text-align: center;
+`;
+
+export {StyledLink, PaperDiv, ScrollableDiv, StyledInput, CenterTextContainer};

@@ -42,7 +42,8 @@ function App(props) {
                 main: 'rgba(#ff4400, 0.2)'
             },
             background: {
-                paper: 'rgba(0,0,0,0.5)'
+                paper: 'rgba(0,0,0,0.5)',
+                paperLight: 'rgba(0,0,0,0.2)'
             }
         }
     });
