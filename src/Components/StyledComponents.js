@@ -1,6 +1,8 @@
+import React from "react";
 import styled from "styled-components";
+
 import {Link} from "react-router-dom";
-import {useTheme} from "@material-ui/styles";
+import TextField from "@material-ui/core/TextField";
 
 /* When this is used you need to send in the correct MUI theme */
 const StyledLink = (styled(Link)`
@@ -14,4 +16,9 @@ const PaperDiv = styled.div`
         background-color: ${(props) => props.theme.palette.background.paper};
 `;
 
-export {StyledLink, PaperDiv};
+const StyledInput = (styled(TextField)`
+        width: 100%;
+        margin-bottom: 2% !important;
+`);
+
+export {StyledLink, PaperDiv, StyledInput};

@@ -1,12 +1,11 @@
 import React from "react";
 
-import TextField from "@material-ui/core/TextField";
+import {StyledInput} from "../StyledComponents";
 
 const PasswordField = (showLogin, password1, setPassword1, password2, setPassword2) => {
     if(showLogin){ // login
         return(
-            <TextField
-                style={ {width: '100%', marginBottom: 8}}
+            <StyledInput
                 value={password1}
                 onChange={e => setPassword1(e.target.value)}
                 name="password"
@@ -19,8 +18,7 @@ const PasswordField = (showLogin, password1, setPassword1, password2, setPasswor
     }else{ // join
         return (
             <div>
-                <TextField
-                    style={ {width: '100%', marginBottom: 8}}
+                <StyledInput
                     value={password1}
                     onChange={e => setPassword1(e.target.value)}
                     name="password1"
@@ -29,8 +27,7 @@ const PasswordField = (showLogin, password1, setPassword1, password2, setPasswor
                     variant="outlined"
                     required
                 />
-                <TextField
-                    style={ {width: '100%', marginBottom: 8}}
+                <StyledInput
                     value={password2}
                     onChange={e => setPassword2(e.target.value)}
                     name="password2"

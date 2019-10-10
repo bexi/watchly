@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link } from 'react-router-dom'
-
+import styled from "styled-components";
 import * as firebase from "firebase";
 
 // Material UI
@@ -16,6 +15,13 @@ import {Container} from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import PasswordField from './PasswordField'
 import SiginFooter from "./SigninFooter";
+import {StyledInput} from "../StyledComponents";
+
+const CenterCard = styled(Card)`
+    width: 50%;
+    margin: 2% auto;
+    text-align: center;
+`;
 
 /**
  * Component for both loggin in and joining the application
@@ -76,25 +82,17 @@ const Signin = (props) => {
 
     const handleForm = e => {(showLogin) ? handleFormLogin(e) : handleFormJoin(e)}
 
-    const headerText = () => {
-        return (showLogin) ? 'Login at Watchly' : 'Join us at Watchly';
-    }
+    const headerText = () => { return (showLogin) ? 'Login at Watchly' : 'Join us at Watchly';}
 
-    const buttonText = () => {
-        if(showLogin) return 'Login';
-        else return 'Join';
-    }
-
-    let linkText = (showLogin) ? 'Join' : "Login";
+    const joinOrLoginText = () => { return (showLogin) ? 'Login' : "Join";}
 
     return (
         <Container>
-            <Card style={{width: '50%', margin:'2% auto'}}>
-                <CardContent style={{textAlign: 'center'}}>
+            <CenterCard>
+                <CardContent>
                     <Typography variant="h4" gutterBottom>{headerText()}</Typography>
                     <form onSubmit={handleForm}>
-                        <TextField
-                            style={ {width: '100%', marginBottom: 8} }
+                        <StyledInput
                             value={email}
                             onChange={e => setEmail(e.target.value)}
                             name="email"
@@ -104,12 +102,12 @@ const Signin = (props) => {
                             required
                         />
                         {PasswordField(showLogin, password1, setPassword1, password2, setPassword2)}
-                        <Button type='submit' variant="contained" color="primary">{buttonText()}</Button>
+                        <Button type='submit' variant="contained" color="primary">{joinOrLoginText()}</Button>
                     </form>
                     <Typography variant="h6" gutterBottom>{error}</Typography>
                     {SiginFooter(showLogin, setShowLogin)}
                 </CardContent>
-            </Card>
+            </CenterCard>
         </Container>
     );
 };
